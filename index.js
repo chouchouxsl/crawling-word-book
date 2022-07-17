@@ -13,9 +13,11 @@ if (!minimist.name || typeof minimist.name === 'boolean') {
   throw new Error('请输入name值')
 }
 
+
+console.log('🤪 minimist >>:', minimist)
 let falg = false
 for (const item of rawData) {
-  if (item.name === minimist.name.trim()) {
+  if (item.name.indexOf(minimist.name.trim()) !== -1) {
     falg = true
     curItem = item
   }
